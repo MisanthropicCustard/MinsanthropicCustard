@@ -3,7 +3,7 @@ var requestPromise = require('request-promise');
 var router = express.Router();
 var mongoose = require('mongoose');
 var db = require('../db/mongoDB.js');
-var keys = require('../fourSquare/config/apiKeys.js');
+var keys = require('../FourSquare/config/apiKeys.js');
 
 //SET UP FOURSQUARE API CALL WITH URL, ENDPOINT, PARAMETTERS, PHOTOS, AND AUTHORIZATION
 var baseUrl = 'https://api.foursquare.com/v2/';

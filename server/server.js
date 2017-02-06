@@ -6,6 +6,7 @@ var request = require('request');
 var routing = require('./routers/routers.js');
 var path = require('path');
 var app = express();
+var db = require('./db/mongoDB.js');
 
 app.set('views', __dirname + '/../src/client');
 app.engine('html', require('ejs').renderFile);
