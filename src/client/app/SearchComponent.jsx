@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 
 class SearchComponent extends React.Component {
   constructor(props) {
@@ -18,11 +19,9 @@ class SearchComponent extends React.Component {
           this.refs.location.value = ''} }>
            <input className="searchInput" type='text' placeholder='Where are you?' ref='location' width='80' />
            <br></br>
-           <br></br>
            <input className="searchInput" type='text' placeholder='What are you looking for?' ref='keyword' width='80' />
            <br></br>
-           <br></br>
-           <button type='submit' class="submit">Submit</button>
+           <button type='submit' className="submit">Submit</button>
          </form>
        </div>
      );

@@ -1,5 +1,5 @@
 body {
-  background-image: url("./map.png");
+  background-image: url("http://pagefreeclinic.org/wp-content/uploads/2016/09/background-dark-blue-1.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -9,6 +9,10 @@ h1, h3, p {
   text-align: center;
   color: #FF7F50;
   font-weight: bold;
+}
+
+h1 {
+  font-size: 50px;
 }
 
 .recentSearches {
@@ -37,13 +41,11 @@ h1, h3, p {
 .zoom {
   margin: 50px;
 }
-#search {
-  width: 80%;
-  margin: 0 auto;
-}
+
 #map {
   width: 50%;
   margin: 0 auto;
+  padding-bottom: 80px;
 }
 
 .list-item, a {
@@ -60,17 +62,56 @@ img {
   height: 75%;
 }
 
+#title {
+  border: solid #ddd;
+  border-radius: 25px;
+  width: 333px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.4);
+  border-width: 1px;
+}
 
-#wrap{
-  width: 1200px;
+#search {
+  border: none;
+  padding-top: 50px;
+  width: 500px;
+  margin: 0 auto;
+  padding-left: 50px;
 }
-#app{
-  width: 300px;
-  margin-left: 80px;
-  float: left;
+
+#title-text {
+  opacity: none;
 }
-#d3{
-  width: 300px;
-  float: right;
-  margin-left:20px; 
+
+#address-comp {
+  border: solid #ddd;
+  border-radius: 25px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.4);
+  border-width: 1px;
+  width: 600px;
+  margin-top: 50px;
+}
+
+#map {
+  margin: 0 auto;
+  padding-left: 25px;
+}
+
+#map, #d3 {
+  display: inline-block;
+  margin-top: -35px;
+}
+
+#search {
+  margin-top: -25px;
+  margin-bottom: -35px;
+}
+
+#title {
+  margin-top: -50px;
+}
+
+#d3 {
+  margin-left: -25px;
 }

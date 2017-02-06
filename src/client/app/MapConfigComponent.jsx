@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoogleMapLoader, GoogleMap, Marker,  } from 'react-google-maps';
+import { GoogleMapLoader, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 
 //CREATES MAP
 class MapConfigComponent extends React.Component {
@@ -36,7 +36,7 @@ class MapConfigComponent extends React.Component {
 					<GoogleMap
 						defaultZoom={12}
 						ref = {(map) => map && map.panTo(this.props.center)}
-						options={{streetViewControl: false, mapTypeControl: false}}>
+						options={{streetViewControl: true, mapTypeControl: true}}>
 						{ markers }
 					</GoogleMap>
 				} />

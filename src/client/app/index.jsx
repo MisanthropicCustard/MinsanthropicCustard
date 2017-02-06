@@ -98,7 +98,7 @@ class App extends React.Component {
     e.preventDefault();
     var context = this;
     //UPDATE CURRENT RECENT SEARCHES
-    this.state.login.recentQueries.push(location + ': ' + keyword);
+    this.state.login.recentQueries.push(this.state.displayAddress.split(',')[0] + ': ' + keyword);
     //MAKE REQUEST WITH CURRENT RECENT SEARCHES
     $.ajax({
       method: 'POST',
@@ -117,8 +117,10 @@ class App extends React.Component {
             recentQueries: data.recentQueries
           }
         })
+        alert('Login success.')
       },
       error: function(err) {
+        alert('User not found.');
         console.log('User not found in db')
       }
     })
@@ -131,7 +133,12 @@ class App extends React.Component {
     if(this.state.login.username) {
       this.updateUser(e, location, keyword);
     }
-    e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
+
+    // clear previous d3 charts from other searches to prevent multiple charts
+    $('svg').remove();
 
     var sendData ={
       keyword: keyword,
@@ -196,6 +203,12 @@ class App extends React.Component {
     })
 
   }
+
+  componentDidMount() {
+    console.log('this location', this.state.displayAddress)
+    this.searchForCity(null, '', this.state.displayAddress);
+  }
+
   render () {
     //FIRST DIV
       //FORM IS FOR SIGNING UP AND LOGGING IN USERS
@@ -232,9 +245,13 @@ class App extends React.Component {
               })}</ul>
           </div>
         </div>
-        <h1>Trendster</h1>
-        <p><i>Showing you the HOT spots</i></p>
-        <SearchComponent searchFunc={ this.searchForCity.bind(this) }/>
+        <div id='title'>
+          <div id='title-text'>
+            <h1>Trendster</h1>
+            <p><i>Showing you the HOT spots</i></p>
+          </div>
+        </div>
+        <SearchComponent onClick={ (e) => this.searchForCity(e, this.state.location) } searchFunc={ this.searchForCity.bind(this) }/>
         <AddressComponent address= { this.state.displayAddress } />
         <MapDisplayComponent center={ this.state.location } markers={ this.state.markers } venues={ this.state.listOfVenues }/>
         <ListComponent list={this.state.listOfVenues}/>

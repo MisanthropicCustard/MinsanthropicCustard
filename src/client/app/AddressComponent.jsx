@@ -4,7 +4,9 @@ import React from 'react';
 class AddressComponent extends React.Component {
 	render() {
 		return(
-		<h3> See what's trending in { this.props.address } </h3>
+			<div id='address-comp'>
+				<h3> See what's trending in { this.props.address } </h3>
+			</div>
 		);
 	}
 }
