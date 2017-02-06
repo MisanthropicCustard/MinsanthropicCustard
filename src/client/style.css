@@ -1,61 +1,76 @@
 body {
-	background-image: url("http://www.psdgraphics.com/file/abstract-network-background.jpg");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+  background-image: url("./map.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 h1, h3, p {
-	font-family: Courier;
-	text-align: center;
-	color: #FF7F50;
-	font-weight: bold;
+  font-family: Courier;
+  text-align: center;
+  color: #FF7F50;
+  font-weight: bold;
 }
 
 .recentSearches {
-	position: absolute;
-	float: left;
-	font-family: Courier;
-	color: #FF7F50;
-	font-weight: bold;
+  position: absolute;
+  float: left;
+  font-family: Courier;
+  color: #FF7F50;
+  font-weight: bold;
 }
 
 .searchInput {
-	font-size: 20px;
-	width: 400px;
+  font-size: 20px;
+  width: 400px;
 }
 
 .signup {
-	font-size: 10px;
-	width: 150px;
+  font-size: 10px;
+  width: 150px;
 }
 
 .login {
-	font-size: 10px;
-	width: 150px;
+  font-size: 10px;
+  width: 150px;
 }
 
 .zoom {
-	margin: 50px;
+  margin: 50px;
 }
 #search {
-	width: 50%;
-	margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
 #map {
-	width: 30%;
-	margin: 0 auto;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .list-item, a {
-	padding-top: 20px;
-	font-family: Courier;
-	color: #FF7F50;
-	font-weight: bold;
-	text-align: center;
-	display: inline-block;
+  padding-top: 20px;
+  font-family: Courier;
+  color: #FF7F50;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
 }
 
 img {
-	width: 75%;
-	height: 75%;
+  width: 75%;
+  height: 75%;
+}
+
+
+#wrap{
+  width: 1200px;
+}
+#app{
+  width: 300px;
+  margin-left: 80px;
+  float: left;
+}
+#d3{
+  width: 300px;
+  float: right;
+  margin-left:20px; 
 }

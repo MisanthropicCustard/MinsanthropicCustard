@@ -18,8 +18,11 @@ class SearchComponent extends React.Component {
           this.refs.location.value = ''} }>
            <input className="searchInput" type='text' placeholder='Where are you?' ref='location' width='80' />
            <br></br>
+           <br></br>
            <input className="searchInput" type='text' placeholder='What are you looking for?' ref='keyword' width='80' />
-           <button type='submit'>Submit</button>
+           <br></br>
+           <br></br>
+           <button type='submit' class="submit">Submit</button>
          </form>
        </div>
      );

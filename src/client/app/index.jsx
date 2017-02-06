@@ -158,7 +158,11 @@ class App extends React.Component {
       data: JSON.stringify(sendData),
       success: function (res) {
         //PARSE OUT THE RESULTS INTO AN ARRAY
+        window.data1 = JSON.parse(res).response.groups[0].items
+
         var venueArr = JSON.parse(res).response.groups[0].items;
+        window.load();
+
         var markers = [];
 
         //GOES THROUGH ARRAY OF VENUES AND CREATES NEW LATTITUDE AND LONGITUDE OF VENUE OBJECTS
