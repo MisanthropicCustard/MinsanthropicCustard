@@ -25,9 +25,9 @@ var load = function() {
     if (venueCount / totalCheckIns >= 0.05) {
       names.push(venueName)
     } else if (venueCount / totalCheckIns >= 0.03) {
-      names.push(venueName.slice(0, 2) + '..');  
+      names.push(venueName.slice(0, 2) + '..');
     } else {
-      names.push(venueName.slice(0, 1) + '.'); 
+      names.push(venueName.slice(0, 1) + '.');
     }
   }
 
