@@ -26,22 +26,50 @@ class MapConfigComponent extends React.Component {
 			}
 			return <Marker key={i} {...marker} />
 		})
-
-		//CREATES THE MAP
-			//REF RE-CENTERS THE MAP WHEN LOCATION CHANGES
-		return (
-			<GoogleMapLoader
-				containerElement = { mapContainer }
-				googleMapElement = {
-					<GoogleMap
-						defaultZoom={12}
-						ref = {(map) => map && map.panTo(this.props.center)}
-						options={{streetViewControl: true, mapTypeControl: true}}>
-						{ markers }
-					</GoogleMap>
-				} />
-		);
-	}
+		const infoWindows = this.props.venues.map((venue, x) => {
+            const location = {
+                position: {
+                lat: this.props.venues[x].venue.location.lat,
+                lng: this.props.venues[x].venue.location.lng
+            }
+            }
+            return <InfoWindow key={x} {...location}>
+            {this.props.venues[x].venue.name}
+            </InfoWindow>
+        })
+        //CREATES THE MAP
+            //REF RE-CENTERS THE MAP WHEN LOCATION CHANGES
+        //IF THE SHOW STATE IS FALSE, IT WILL SHOW THE MARKERS
+        if (this.props.show === true) {
+        return (
+            <GoogleMapLoader
+                containerElement = { mapContainer }
+                googleMapElement = {
+                    <GoogleMap
+                        defaultZoom={12}
+                        ref = {(map) => map && map.panTo(this.props.center)}
+                        options={{streetViewControl: true, mapTypeControl: true}}>
+                        { markers }
+                        { infoWindows }
+                    </GoogleMap>
+                } />
+        );
+    }
+      if (this.props.show ===false) {
+          return (
+            <GoogleMapLoader
+                containerElement = { mapContainer }
+                googleMapElement = {
+                    <GoogleMap
+                        defaultZoom={12}
+                        ref = {(map) => map && map.panTo(this.props.center)}
+                        options={{streetViewControl: true, mapTypeControl: true}}>
+                        { markers }
+                    </GoogleMap>
+                } />
+        );
+      }
+    }
 }
 
 export default MapConfigComponent;

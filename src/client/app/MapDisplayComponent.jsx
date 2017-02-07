@@ -11,7 +11,8 @@ class MapDisplayComponent extends React.Component {
       location: {
         lat:37.7831708,
         lng: -122.4100967
-      }
+      },
+      show: false
     }
   }
 
@@ -29,29 +30,42 @@ class MapDisplayComponent extends React.Component {
       height: this.state.height - 50
     });
   }
-
-  //RECENTERS MAP
-  render() {
-    const markers = [
-      {
-        location: {
-          lat: 37.7831708,
-          lng: -122.4100967
-        }
-      }
-    ];
-
-    return (
-      <div>
-        <div id='map' style={{width: this.state.width, height: this.state.height, background: 'none'}}>
-          <button id='zoomIn' onClick={this.increaseSize.bind(this)}> + </button>
-          <button id='zoomOut' onClick={this.decreaseSize.bind(this)}> - </button>
-          <MapConfigComponent center={ this.props.center } markers={ this.props.markers } venues={this.props.venues}/>
-        </div>
-        <div id='d3'/>
-      </div>
-    );
+  showInfoWindow() {
+     if (this.state.show === false){
+       this.setState({
+         show: true
+       })
+     }
+     if (this.state.show === true){
+       console.log(true)
+       this.setState({
+         show: false
+       })
+     }
   }
+ //RECENTERS MAP
+ render() {
+   const markers = [
+     {
+       location: {
+         lat: 37.7831708,
+         lng: -122.4100967
+       }
+     }
+   ];
+
+   return (
+     <div>
+       <div id='map' style={{width: this.state.width, height: this.state.height, background: 'none'}}>
+         <button id='zoomIn' onClick={this.increaseSize.bind(this)}> + </button>
+         <button id='zoomOut' onClick={this.decreaseSize.bind(this)}> - </button>
+         <button id='showInfoWindow' onClick={this.showInfoWindow.bind(this)}>Markers</button>
+         <MapConfigComponent center={ this.props.center } markers={ this.props.markers } venues={this.props.venues} show={this.state.show}/>
+       </div>
+       <div id='d3'/>
+     </div>
+   );
+ }
 }
 
 export default MapDisplayComponent;

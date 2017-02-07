@@ -72,7 +72,7 @@ var load = function() {
        .attr('font-weight', 'bold')
        .text(function(d) {
         counter++;
-        var name = names[counter].split(' ')[0]
+        var name = names[counter].split(' ')[0];
         return name
       })
 
